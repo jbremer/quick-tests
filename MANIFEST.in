@@ -1,0 +1,2 @@
+graft qt
+recursive-exclude * *.pyc *.pyo *.map
