@@ -14,5 +14,6 @@ setuptools.setup(
     description="Quick CI Tests",
     include_package_data=True,
     install_requires=[
+        "yara-python==3.6.1",
     ],
 )
