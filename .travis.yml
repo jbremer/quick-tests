@@ -1,0 +1,25 @@
+language: python
+
+matrix:
+  fast_finish: true
+  include:
+    - python: 2.7
+    - os: osx
+      language: generic
+
+before_install:
+  - |
+    if [[ $TRAVIS_OS_NAME == "linux" ]]; then
+        sudo apt-get update -qq
+    else
+        brew update || brew update
+    fi
+
+install:
+  - pip install -U pip setuptools
+  - pip install -e .
+  - pip install pytest
+
+script:
+  # Run tests from the "tests" directory.
+  - py.test

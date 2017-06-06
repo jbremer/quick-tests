@@ -1,0 +1,15 @@
+environment:
+  matrix:
+    - PYTHON: "C:/Python27"
+
+install:
+  - "set PATH=%PYTHON%;%PYTHON%/Scripts;%PATH%"
+
+  - "pip.exe install -U pip setuptools"
+  - "pip.exe install -e ."
+  - "pip.exe install pytest"
+
+build: false
+
+test_script:
+  - "pytest.exe"
